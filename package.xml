@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ats_livox_adapter</name>
+  <version>0.1.0</version>
+  <description>
+    PointCloud2 to livox_ros_driver2/CustomMsg adapter shared by the simulators.
+    Point-LIO consumes CustomMsg (preprocess.lidar_type 1); simulators can only
+    cheaply emit PointCloud2, and building CustomPoint objects in rclpy costs
+    about 121 ms per frame, so the conversion lives in C++.
+  </description>
+  <maintainer email="ats@example.com">ATS 2026 Sentry Project</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>sensor_msgs</depend>
+  <depend>livox_ros_driver2</depend>
+
+  <test_depend>ament_cmake_gtest</test_depend>
+  <test_depend>ament_lint_auto</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
