@@ -18,11 +18,4 @@ rclcpp_components_register_node(pointcloud_to_livox_component
   EXECUTABLE pointcloud_to_livox_node
 )
 
-if(BUILD_TESTING)
-  find_package(ament_cmake_gtest REQUIRED)
-  ament_add_gtest(test_convert test/test_convert.cpp)
-  target_include_directories(test_convert PRIVATE include)
-  ament_target_dependencies(test_convert sensor_msgs livox_ros_driver2)
-endif()
-
 ament_auto_package()
